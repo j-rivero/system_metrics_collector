@@ -1,2 +1,4 @@
 fixes:
   - "ros_ws/src/system_metrics_collector/::"
+ignore:
+  - "ros_ws/src/system_metrics_collector/system_metrics_collector/test"
