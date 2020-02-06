@@ -18,7 +18,7 @@ jobs:
           os: [ubuntu-18.04]
     steps:
     - uses: ros-tooling/setup-ros@0.0.13
-    - uses: ros-tooling/action-ros-ci@0.0.13
+    - uses: j-rivero/action-ros-ci@use_test_filter_params
       with:
         package-name: system_metrics_collector
         colcon-mixin-name: coverage-gcc
