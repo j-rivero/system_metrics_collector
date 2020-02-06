@@ -18,11 +18,13 @@ jobs:
           os: [ubuntu-18.04]
     steps:
     - uses: ros-tooling/setup-ros@0.0.13
-    - uses: ros-tooling/action-ros-ci@0.0.13
+      # retry
+    - uses: j-rivero/action-ros-ci@use_test_filter_params
       with:
         package-name: system_metrics_collector
         colcon-mixin-name: coverage-gcc
         colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
+        coverage-ignore-pattern: "*system_metrics_collector/test/*"
     - uses: codecov/codecov-action@v1
       # Prevent being rate limited by only reporting coverage from the Ubuntu
       # build.
